@@ -1,23 +1,17 @@
-export class VolumeModel {
-  constructor(
-    idVolume: number,
-    numeroEdicao: number,
-    siglaEvento: string,
-    cidade: string,
-    dataInicio: Date,
-    descricaoPt: string,
-    descricaoEn: string,
-    artigos : {}
-  ){
 
-    this.idVolume = idVolume;
-    this.numeroEdicao = numeroEdicao;
-    this.siglaEvento = siglaEvento;
-    this.cidade = cidade;
-    this.dataInicio = dataInicio;
-    this.descricaoPt = descricaoPt;
-    this.descricaoEn = descricaoEn;
-    this.artigos = artigos;
+import { VolumeApiModel } from './volume-api-model'
+
+export class VolumeModel {
+  constructor(volumeApi : VolumeApiModel){
+
+    this.idVolume = volumeApi.idVolume;
+    this.numeroEdicao = volumeApi.numeroEdicao;
+    this.siglaEvento = volumeApi.siglaEvento;
+    this.cidade = volumeApi.cidade;
+    this.dataInicio = new Date(volumeApi.dataInicio);
+    this.descricaoPt = volumeApi.descricaoPt;
+    this.descricaoEn = volumeApi.descricaoEn;
+    this.artigos = volumeApi.artigos;
   }
   public idVolume: number;
 
@@ -33,5 +27,7 @@ export class VolumeModel {
 
   public descricaoEn: string;
 
-  public artigos : {}
+  public artigos : {};
+
+
 }

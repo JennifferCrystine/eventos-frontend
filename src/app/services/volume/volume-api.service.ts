@@ -9,7 +9,7 @@ import { ArtigoApiModel } from '../artigo/artigo-api-model';
 @Injectable({
   providedIn: 'root'
 })
-export class VolumesApiService {
+export class VolumeApiService {
 
   constructor(private http : HttpClient) {}
 
