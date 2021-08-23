@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { VolumeModel } from 'src/app/services/volume/volume-model';
+import { VolumeService } from 'src/app/services/volume/volume.service';
 
 @Component({
   selector: 'app-volume',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./volume.component.css']
 })
 export class VolumeComponent implements OnInit {
+  @Input() volume: VolumeModel | undefined;
 
-  constructor() { }
+  constructor(public svc : VolumeService) { }
+
 
   ngOnInit(): void {
   }

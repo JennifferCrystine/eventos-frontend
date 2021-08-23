@@ -15,39 +15,39 @@ export class VolumeApiService {
 
   public listarVolumes(): Observable<VolumeApiModel[]> {
     return this.http.get<VolumeApiModel[]>(
-      'https://localhost:8080/volumes'
+      'http://localhost:8080/volumes'
     );
   }
 
   public getById(idVolume : number): Observable<VolumeApiModel> {
     return this.http.get<VolumeApiModel>(
-      'https://localhost:8080/volumes/' + idVolume
+      'http://localhost:8080/volumes/' + idVolume
     );
   }
 
   public criarVolume(volume : VolumePostModel): Observable<object> {
     return this.http.post<object>(
-      'https://localhost:8080/volumes/', volume
+      'http://localhost:8080/volumes/', volume
     );
   }
 
 
   public atualizarVolume(idVolume : number, volume : VolumeModel): Observable<VolumeApiModel> {
     return this.http.put<VolumeApiModel>(
-      'https://localhost:8080/volumes/' + idVolume, volume
+      'http://localhost:8080/volumes/' + idVolume, volume
     );
   }
 
 
   public excluirVolume(idVolume : number): Observable<object> {
     return this.http.delete<object>(
-      'https://localhost:8080/volumes/' + idVolume
+      'http://localhost:8080/volumes/' + idVolume
     );
   }
 
   public artigosDeUmVolume(idVolume : number): Observable<ArtigoApiModel[]> {
     return this.http.get<ArtigoApiModel[]>(
-      'https://localhost:8080/volumes/'+ idVolume +'/artigos'
+      'http://localhost:8080/volumes/'+ idVolume +'/artigos'
     );
   }
 

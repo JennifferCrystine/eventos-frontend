@@ -1,1 +1,10 @@
-<p>volume works!</p>
+<div class="volume">
+  <mat-card>
+    <p *ngIf="volume?.siglaEvento != null">Sigla: {{volume?.siglaEvento}}</p>
+    <p *ngIf="volume?.descricaoPt != null">Descrição: {{volume?.descricaoPt}}</p>
+    <p *ngIf="volume?.descricaoEn != null">English Description: {{volume?.descricaoEn}}</p>
+    <p *ngIf="volume?.dataInicio != null">Data: {{volume?.dataInicio}}</p>
+    <p *ngIf="volume?.cidade != null">Cidade: {{volume?.cidade}}</p>
+    <p *ngIf="volume?.numeroEdicao != null">Edição: {{volume?.numeroEdicao}}</p>
+  </mat-card>
+</div>
