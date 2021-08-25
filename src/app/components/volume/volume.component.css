@@ -1,0 +1,12 @@
+.volume {
+  margin: 10px;
+  max-width: 20vw;
+}
+
+.volume .botoes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+}

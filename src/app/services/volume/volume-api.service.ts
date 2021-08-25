@@ -39,8 +39,8 @@ export class VolumeApiService {
   }
 
 
-  public excluirVolume(idVolume : number): Observable<object> {
-    return this.http.delete<object>(
+  public excluirVolume(idVolume : number): void {
+    this.http.delete<object>(
       'http://localhost:8080/volumes/' + idVolume
     );
   }

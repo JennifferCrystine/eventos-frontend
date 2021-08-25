@@ -1,0 +1,16 @@
+.volumes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.volumes h1 {
+  text-align: center;
+  margin-top: 15px;
+}
+
+
+.volumes button {
+  max-width: fit-content;
+  margin-left: 10px;
+}

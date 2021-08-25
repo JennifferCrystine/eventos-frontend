@@ -1,10 +1,16 @@
 <div class="volume">
   <mat-card>
     <p *ngIf="volume?.siglaEvento != null">Sigla: {{volume?.siglaEvento}}</p>
-    <p *ngIf="volume?.descricaoPt != null">Descrição: {{volume?.descricaoPt}}</p>
-    <p *ngIf="volume?.descricaoEn != null">English Description: {{volume?.descricaoEn}}</p>
-    <p *ngIf="volume?.dataInicio != null">Data: {{volume?.dataInicio}}</p>
-    <p *ngIf="volume?.cidade != null">Cidade: {{volume?.cidade}}</p>
     <p *ngIf="volume?.numeroEdicao != null">Edição: {{volume?.numeroEdicao}}</p>
+    <p *ngIf="volume?.dataInicio != null">Data: {{volume?.dataInicio | date }}</p>
+    <div class="botoes" *ngIf="volume != null">
+      <button mat-button color="primary" aria-label="Ver detalhes do volume">
+        Ver detalhes
+      </button>
+      <button mat-mini-fab color="warn" aria-label="Excluir volume"
+      (click)="excluirVolume(volume.idVolume)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
   </mat-card>
 </div>

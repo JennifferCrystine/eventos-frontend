@@ -6,18 +6,26 @@ import { VolumesComponent } from './components/volumes/volumes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { FormsModule }   from '@angular/forms';
+import { VolumeDetalheComponent } from './volume-detalhe/volume-detalhe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VolumeComponent,
-    VolumesComponent
+    VolumesComponent,
+    VolumeDetalheComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

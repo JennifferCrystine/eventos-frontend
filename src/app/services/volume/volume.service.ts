@@ -13,7 +13,7 @@ export class VolumeService {
 
   constructor(public svc : VolumeApiService) { }
 
-  public listarVolumes(){
+  public listarVolumes(): void {
     this.svc.listarVolumes().subscribe({
       next: (volumes) => {
         volumes.forEach(v => this.volumes.push(new VolumeModel(v)));
@@ -21,7 +21,7 @@ export class VolumeService {
     })
   }
 
-  public obterVolume(id : number){
+  public obterVolume(id : number): void{
     this.svc.getById(id).subscribe({
       next: (volume) => {
         this.volume = volume;
@@ -33,13 +33,17 @@ export class VolumeService {
 
     this.svc.criarVolume(volume).subscribe({
       next: () => {
-        this.atualizarEventos();
+        this.atualizarVolumes();
       },
     });
   }
 
-  public atualizarEventos(): void {
+  public atualizarVolumes(): void {
     this.listarVolumes();
+  }
+
+  public excluirVolume(id: number): void{
+    this.svc.excluirVolume(id);
   }
 
 
