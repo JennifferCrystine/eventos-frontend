@@ -4,7 +4,8 @@
     <p *ngIf="volume?.numeroEdicao != null">Edição: {{volume?.numeroEdicao}}</p>
     <p *ngIf="volume?.dataInicio != null">Data: {{volume?.dataInicio | date }}</p>
     <div class="botoes" *ngIf="volume != null">
-      <button mat-button color="primary" aria-label="Ver detalhes do volume">
+      <button mat-button color="primary" aria-label="Ver detalhes do volume"
+      [routerLink]="['/volumes', volume.idVolume]" >
         Ver detalhes
       </button>
       <button mat-mini-fab color="warn" aria-label="Excluir volume"

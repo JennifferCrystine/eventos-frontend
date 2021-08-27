@@ -21,12 +21,12 @@ export class VolumeService {
     })
   }
 
-  public obterVolume(id : number): void{
+  public obterVolume(id : number): void {
     this.svc.getById(id).subscribe({
-      next: (volume) => {
-        this.volume = volume;
+      next: (volumeApi) => {
+        this.volume = volumeApi;
       }
-    })
+    });
   }
 
   public criarVolume(volume: VolumePostModel): void {

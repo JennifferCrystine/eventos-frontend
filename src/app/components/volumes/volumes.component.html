@@ -1,35 +1,6 @@
 <div class="volumes">
   <h1>Volumes</h1>
   <app-volume *ngFor="let item of svc.volumes" [volume]="item"></app-volume>
-  <button mat-raised-button color="primary" aria-label="Adicionar volume">
-    Adicionar
+  <button [routerLink]="['/volumes/novo']" mat-raised-button color="primary" aria-label="Adicionar volume">Adicionar
   </button>
-
-  <div class="form-wrapper">
-    <form class="adicionarVolume">
-
-      <label for="volumeSigla">Sigla</label>
-      <input type="text" id="volumeSigla" [(ngModel)]="volumeModel.siglaEvento" name="siglaEvento" placeholder="Sigla do volume" class="input-padrao" required />
-
-
-      <label for=" dataInicio">Data de Fim:</label>
-      <input type="date" id="dataInicio" [(ngModel)]="volumeModel.dataInicio" name="dataInicio" class="input-padrao" required />
-
-      <label for="descricaoPt">Descrição</label>
-      <input type="text" id="descricaoPt"
-      [(ngModel)]="volumeModel.descricaoPt" placeholder="Descrição do evento em Português" name="descricaoPt" class="input-padrao" required/>
-
-
-      <label for="descricaoEn">Descrição Inglês:</label>
-      <input type="text" id="descricaoEn " [(ngModel)]="volumeModel.descricaoEn" placeholder="Descrição do evento em Inglês"
-        name="descricao" class="input-padrao" required />
-
-      <label for="cidade">Cidade:</label>
-      <input type="text" id="cidade" [(ngModel)]="volumeModel.cidade" placeholder="Cidade onde ocorrerá essa edição do evento"
-        name="cidade" class="input-padrao" required />
-
-      <button class="enviar" (click)="svc.criarVolume(volumeModel)">Adicionar Evento</button>
-
-    </form>
-
 </div>

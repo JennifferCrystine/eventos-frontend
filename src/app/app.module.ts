@@ -9,14 +9,18 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule }   from '@angular/forms';
-import { VolumeDetalheComponent } from './volume-detalhe/volume-detalhe.component';
+import { VolumeDetalheComponent } from './components/volume-detalhe/volume-detalhe.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CriarVolumeComponent } from './components/criar-volume/criar-volume.component';
+import { routes } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     VolumeComponent,
     VolumesComponent,
-    VolumeDetalheComponent
+    VolumeDetalheComponent,
+    CriarVolumeComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,8 @@ import { VolumeDetalheComponent } from './volume-detalhe/volume-detalhe.componen
     HttpClientModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 .volume {
   margin: 10px;
-  max-width: 20vw;
+  max-width: 21vw;
+  min-width: 20vw;
 }
 
 .volume .botoes {
