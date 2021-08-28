@@ -1,6 +1,8 @@
 <div class="volumes">
   <h1>Volumes</h1>
-  <app-volume *ngFor="let item of svc.volumes" [volume]="item"></app-volume>
+  <div class="lista-volumes">
+    <app-volume *ngFor="let item of svc.volumes" [volume]="item"></app-volume>
+  </div>
   <button [routerLink]="['/volumes/novo']" mat-raised-button color="primary" aria-label="Adicionar volume">Adicionar
   </button>
 </div>

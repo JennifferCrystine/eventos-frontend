@@ -15,18 +15,18 @@ export class VolumeDetalheComponent implements OnInit {
   id: number = 0;
 
   constructor(
-    private _Activatedroute:ActivatedRoute,
+    private _activatedRoute:ActivatedRoute,
     public svc: VolumeService) {
 
   }
 
 
   ngOnInit(): void {
-    this._Activatedroute.paramMap.subscribe(params => {
+    this._activatedRoute.paramMap.subscribe(params => {
       if (params != null) {
         this.tempId = params.get('id');
         this.id = Number.parseInt(this.tempId);
-        this.svc.obterVolume(this.id)
+        this.svc.obterVolume(this.id);
         this.volume = this.svc.volume;
       }
     });

@@ -9,7 +9,7 @@ import { VolumePostModel } from './volume-post-model';
 })
 export class VolumeService {
   public volumes : VolumeModel[] = [];
-  public volume : VolumeApiModel | undefined;
+  volume: VolumeApiModel | undefined;
 
   constructor(public svc : VolumeApiService) { }
 
@@ -22,6 +22,7 @@ export class VolumeService {
   }
 
   public obterVolume(id : number): void {
+
     this.svc.getById(id).subscribe({
       next: (volumeApi) => {
         this.volume = volumeApi;

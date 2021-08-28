@@ -12,7 +12,7 @@ import { FormsModule }   from '@angular/forms';
 import { VolumeDetalheComponent } from './components/volume-detalhe/volume-detalhe.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CriarVolumeComponent } from './components/criar-volume/criar-volume.component';
-import { routes } from './app-routing.module';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { routes } from './app-routing.module';
     MatButtonModule,
     MatIconModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

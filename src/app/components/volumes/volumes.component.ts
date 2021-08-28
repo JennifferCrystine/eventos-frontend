@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { VolumePostModel } from 'src/app/services/volume/volume-post-model';
 import { VolumeService } from 'src/app/services/volume/volume.service';
 
 @Component({

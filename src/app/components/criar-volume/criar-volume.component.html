@@ -1,9 +1,9 @@
 <div class="form-wrapper">
-  <form class="adicionarVolume">
+  <h1>Adicionar novo volume</h1>
+  <form class="adicionar-volume" onsubmit="reset()">
 
     <label for="volumeSigla">Sigla</label>
     <input type="text" id="volumeSigla" [(ngModel)]="volumeModel.siglaEvento" name="siglaEvento" placeholder="Sigla do volume" class="input-padrao" required />
-
 
     <label for=" dataInicio">Data de Fim:</label>
     <input type="date" id="dataInicio" [(ngModel)]="volumeModel.dataInicio" name="dataInicio" class="input-padrao" required />
@@ -21,6 +21,6 @@
     <input type="text" id="cidade" [(ngModel)]="volumeModel.cidade" placeholder="Cidade onde ocorrerá essa edição do evento"
       name="cidade" class="input-padrao" required />
 
-    <button class="enviar" (click)="svc.criarVolume(volumeModel)">Adicionar Evento</button>
-
   </form>
+  <button type="submit" mat-flat-button color="primary" class="enviar" (click)="svc.criarVolume(volumeModel)" [routerLink]="['']">Adicionar Evento</button>
+</div>
