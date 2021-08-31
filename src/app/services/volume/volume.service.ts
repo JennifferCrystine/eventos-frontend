@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ArtigoModel } from '../artigo/artigo-model';
 import { VolumeApiModel } from './volume-api-model';
 import { VolumeApiService } from './volume-api.service';
 import { VolumeModel } from './volume-model';
@@ -9,7 +11,10 @@ import { VolumePostModel } from './volume-post-model';
 })
 export class VolumeService {
   public volumes : VolumeModel[] = [];
-  volume: VolumeApiModel | undefined;
+  public artigos : ArtigoModel[] = [];
+  public volume: VolumeApiModel | undefined;
+
+
 
   constructor(public svc : VolumeApiService) { }
 
@@ -22,7 +27,6 @@ export class VolumeService {
   }
 
   public obterVolume(id : number): void {
-
     this.svc.getById(id).subscribe({
       next: (volumeApi) => {
         this.volume = volumeApi;
@@ -45,9 +49,14 @@ export class VolumeService {
 
   public excluirVolume(id: number): void{
     this.svc.excluirVolume(id);
+    this.atualizarVolumes();
   }
 
-
-
-
+  public artigosVolume(idVolume: number): void {
+    this.svc.artigosDeUmVolume(idVolume).subscribe({
+      next: (artigosApi) => {
+        artigosApi.forEach(a => this.artigos.push(new ArtigoModel(a)));
+      }
+    })
+  }
 }

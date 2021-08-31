@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { VolumeModel } from 'src/app/services/volume/volume-model';
-import { VolumePostModel } from 'src/app/services/volume/volume-post-model';
 import { VolumeService } from 'src/app/services/volume/volume.service';
 
 @Component({
@@ -15,6 +14,7 @@ export class VolumeComponent implements OnInit {
 
   public excluirVolume(id: number): void{
     this.svc.excluirVolume(id);
+
   }
 
   ngOnInit(): void {

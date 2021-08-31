@@ -10,4 +10,7 @@
   <button class="voltar" mat-mini-fab color="primary" aria-label="Voltar para a página principal" [routerLink]="['']">
     <mat-icon>arrow_back_ios_new</mat-icon>
   </button>
+  <div *ngFor="let item of svc.artigos">
+    <app-artigo></app-artigo>
+  </div>
 </div>

@@ -1,9 +1,48 @@
 import { Injectable } from '@angular/core';
+import { ArtigoApiModel } from './artigo-api-model';
+import { ArtigoApiService } from './artigo-api.service';
+import { ArtigoModel } from './artigo-model';
+import { ArtigoPostModel } from './artigo-post-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArtigoService {
+  public artigos : ArtigoModel[] = [];
+  artigo: ArtigoApiModel | undefined;
 
-  constructor() { }
+  constructor(public svc: ArtigoApiService) { }
+
+  public listarArtigos(): void {
+    this.svc.listarArtigos().subscribe({
+      next: (artigosApi) => {
+        artigosApi.forEach(v => this.artigos.push(new ArtigoModel(v)));
+      }
+    })
+  }
+
+  public obterArtigo(id : number): void {
+    this.svc.getById(id).subscribe({
+      next: (artigoApi) => {
+        this.artigo = artigoApi;
+      }
+    });
+  }
+
+  public criarArtigo(artigo: ArtigoPostModel): void {
+
+    this.svc.criarArtigo(artigo).subscribe({
+      next: () => {
+        this.atualizarArtigosApi();
+      },
+    });
+  }
+
+  public atualizarArtigosApi(): void {
+    this.listarArtigos();
+  }
+
+  public excluirArtigo(id: number): void{
+    this.svc.excluirArtigo(id);
+  }
 }

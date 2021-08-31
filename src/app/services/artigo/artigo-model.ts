@@ -1,30 +1,20 @@
+import { ArtigoApiModel } from "./artigo-api-model";
+
 export class ArtigoModel {
-  constructor(
-    idArtigo: number,
-    idVolume: number,
-    autores: {},
-    ordemArtigo: number,
-    idioma: string,
-    titulo: string,
-    tituloEn: string,
-    resumo: string,
-    resumoEn: string,
-    palavrasChaves: string,
-    palavrasChavesEn: string,
-    numeroPaginas: number
+  constructor(artigoApi: ArtigoApiModel
     ){
-      this.idArtigo = idArtigo;
-      this.idVolume = idVolume;
-      this.autores = autores;
-      this.idioma = idioma;
-      this.ordemArtigo = ordemArtigo;
-      this.titulo = titulo;
-      this.tituloEn = tituloEn;
-      this.resumo = resumo;
-      this.resumoEn = resumoEn;
-      this.palavrasChaves = palavrasChaves;
-      this.palavrasChavesEn = palavrasChavesEn;
-      this.numeroPaginas = numeroPaginas;
+      this.idArtigo = artigoApi.idArtigo;
+      this.idVolume = artigoApi.idVolume;
+      this.autores = artigoApi.autores;
+      this.idioma = artigoApi.idioma;
+      this.ordemArtigo = artigoApi.ordemArtigo;
+      this.titulo = artigoApi.titulo;
+      this.tituloEn = artigoApi.tituloEn;
+      this.resumo = artigoApi.resumo;
+      this.resumoEn = artigoApi.resumoEn;
+      this.palavrasChaves = artigoApi.palavrasChaves;
+      this.palavrasChavesEn = artigoApi.palavrasChavesEn;
+      this.numeroPaginas = artigoApi.numeroPaginas;
     }
 
   public idArtigo: number;

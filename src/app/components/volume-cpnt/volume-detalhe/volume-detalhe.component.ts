@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VolumeApiModel } from '../../services/volume/volume-api-model';
+import { VolumeApiModel } from '../../../services/volume/volume-api-model';
 import { ActivatedRoute } from '@angular/router';
 import { VolumeService } from 'src/app/services/volume/volume.service';
 
@@ -26,8 +26,11 @@ export class VolumeDetalheComponent implements OnInit {
       if (params != null) {
         this.tempId = params.get('id');
         this.id = Number.parseInt(this.tempId);
-        this.svc.obterVolume(this.id);
-        this.volume = this.svc.volume;
+        this.svc.svc.getById(this.id).subscribe({
+          next: (volumeApi) => {
+            this.volume = volumeApi;
+          }
+        });
       }
     });
   }
