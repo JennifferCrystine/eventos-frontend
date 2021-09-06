@@ -26,6 +26,8 @@ export class VolumeDetalheComponent implements OnInit {
       if (params != null) {
         this.tempId = params.get('id');
         this.id = Number.parseInt(this.tempId);
+        this.svc.artigosVolume(this.id);
+        
         this.svc.svc.getById(this.id).subscribe({
           next: (volumeApi) => {
             this.volume = volumeApi;

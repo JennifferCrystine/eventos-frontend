@@ -1,16 +1,21 @@
 <div class="detalhes-volume">
-  <mat-card class="volume">
-    <h3>Sigla: {{volume?.siglaEvento}}</h3>
-    <h3>Edição: {{volume?.numeroEdicao}}</h3>
-    <h3>Cidade: {{volume?.cidade}}</h3>
-    <h3>Descrição Português: {{volume?.descricaoPt}}</h3>
-    <h3>Descrição Inglês: {{volume?.descricaoEn}}</h3>
-    <h3>Data: {{volume?.dataInicio | date }}</h3>
-  </mat-card>
-  <button class="voltar" mat-mini-fab color="primary" aria-label="Voltar para a página principal" [routerLink]="['']">
-    <mat-icon>arrow_back_ios_new</mat-icon>
-  </button>
-  <div *ngFor="let item of svc.artigos">
-    <app-artigo></app-artigo>
+  <div class="volume">
+    <mat-card>
+      <h3>Sigla: {{volume?.siglaEvento}}</h3>
+      <h3>Edição: {{volume?.numeroEdicao}}</h3>
+      <h3>Cidade: {{volume?.cidade}}</h3>
+      <h3>Descrição Português: {{volume?.descricaoPt}}</h3>
+      <h3>Descrição Inglês: {{volume?.descricaoEn}}</h3>
+      <h3>Data: {{volume?.dataInicio | date }}</h3>
+    </mat-card>
+    <button class="voltar" mat-mini-fab color="primary" aria-label="Voltar para a página principal" [routerLink]="['']">
+      <mat-icon>arrow_back_ios_new</mat-icon>
+    </button>
+  </div>
+  <h1>Artigos</h1>
+  <div class="artigos-wrap">
+    <div class="artigos" *ngFor="let item of svc.artigos">
+      <app-artigo [artigo]="item"></app-artigo>
+    </div>
   </div>
 </div>

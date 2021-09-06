@@ -13,6 +13,23 @@
 
 .detalhes-volume .voltar {
   margin-top: 10px;
+  align-self: flex-start;
+}
+
+.detalhes-volume .artigos-wrap {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  min-width: 80vw;
+  max-width: 100vw;
+
+}
+
+.detalhes-volume .artigos-wrap .artigos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 

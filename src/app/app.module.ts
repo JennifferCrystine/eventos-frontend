@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CriarVolumeComponent } from './components/volume-cpnt/criar-volume/criar-volume.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ArtigoComponent } from './components/artigo-cpnt/artigo/artigo.component';
+import { ArtigoDetalheComponent } from './components/artigo-cpnt/artigo-detalhe/artigo-detalhe.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ArtigoComponent } from './components/artigo-cpnt/artigo/artigo.componen
     VolumesComponent,
     VolumeDetalheComponent,
     CriarVolumeComponent,
-    ArtigoComponent
+    ArtigoComponent,
+    ArtigoDetalheComponent
   ],
   imports: [
     BrowserModule,

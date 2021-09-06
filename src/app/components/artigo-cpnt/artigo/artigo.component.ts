@@ -8,10 +8,11 @@ import { ArtigoModel } from 'src/app/services/artigo/artigo-model';
 })
 export class ArtigoComponent implements OnInit {
   @Input() artigo: ArtigoModel | undefined;
-  
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

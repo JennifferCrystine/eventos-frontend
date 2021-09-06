@@ -1,0 +1,16 @@
+.artigo-wrap {
+  min-width: 20vw;
+
+}
+
+.artigo-wrap .artigo .artigo-titulo {
+  text-align: center;
+
+}
+
+.artigo-wrap .artigo .artigo-titulo a{
+  text-decoration: none;
+  color: black;
+
+}
+

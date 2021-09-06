@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { VolumesComponent } from './components/volume-cpnt/volumes/volumes.component';
 import { CriarVolumeComponent } from './components/volume-cpnt/criar-volume/criar-volume.component';
 import { VolumeDetalheComponent } from './components/volume-cpnt/volume-detalhe/volume-detalhe.component';
+import { ArtigoDetalheComponent } from './components/artigo-cpnt/artigo-detalhe/artigo-detalhe.component';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,9 @@ export const routes: Routes = [
   },
   {
     path: 'volumes/:id', component: VolumeDetalheComponent,
+  },
+  {
+    path: 'volumes/:id/artigos/:id', component: ArtigoDetalheComponent,
   }
 ];
 
