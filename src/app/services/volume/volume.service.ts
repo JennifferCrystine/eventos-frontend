@@ -5,6 +5,7 @@ import { VolumeApiModel } from './volume-api-model';
 import { VolumeApiService } from './volume-api.service';
 import { VolumeModel } from './volume-model';
 import { VolumePostModel } from './volume-post-model';
+import { VolumeUpdateModel } from './volume-update-model';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,7 @@ export class VolumeService {
     });
   }
 
+ 
   public criarVolume(volume: VolumePostModel): void {
 
     this.svc.criarVolume(volume).subscribe({

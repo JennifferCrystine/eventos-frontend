@@ -1,7 +1,7 @@
 <div class="detalhes-artigo">
   <div class="artigo">
+    <h1 class="artigo-titulo">{{artigo?.titulo}}</h1>
     <mat-card>
-      <h3>{{artigo?.titulo}}</h3>
       <h3>{{artigo?.tituloEn}}</h3>
       <h3>{{artigo?.ordemArtigo}}</h3>
       <h3>{{artigo?.idioma}}</h3>
@@ -9,7 +9,10 @@
       <h3>{{artigo?.resumoEn}}</h3>
       <h3>{{artigo?.palavrasChaves}}</h3>
       <h3>{{artigo?.palavrasChavesEn}}</h3>
-      <h3>{{artigo?.numeroPaginas}}</h3>
+      <h3>nº páginas: {{artigo?.numeroPaginas}}</h3>
     </mat-card>
+    <button class="voltar" mat-mini-fab color="primary" aria-label="Voltar para a página do volume" [routerLink]="['/volumes', artigo?.idVolume]">
+      <mat-icon>arrow_back_ios_new</mat-icon>
+    </button>
   </div>
 </div>

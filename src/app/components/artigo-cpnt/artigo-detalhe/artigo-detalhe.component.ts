@@ -22,7 +22,6 @@ export class ArtigoDetalheComponent implements OnInit {
         this.svc.svc.getById(id).subscribe({
           next: (artigoApi) => {
             this.artigo = artigoApi;
-            console.log(this.artigo);
           }
         });
       }

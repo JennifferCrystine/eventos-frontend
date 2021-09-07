@@ -15,6 +15,7 @@ import { CriarVolumeComponent } from './components/volume-cpnt/criar-volume/cria
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ArtigoComponent } from './components/artigo-cpnt/artigo/artigo.component';
 import { ArtigoDetalheComponent } from './components/artigo-cpnt/artigo-detalhe/artigo-detalhe.component';
+import { EditarVolumeComponent } from './components/volume-cpnt/editar-volume/editar-volume.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ArtigoDetalheComponent } from './components/artigo-cpnt/artigo-detalhe/
     VolumeDetalheComponent,
     CriarVolumeComponent,
     ArtigoComponent,
-    ArtigoDetalheComponent
+    ArtigoDetalheComponent,
+    EditarVolumeComponent
   ],
   imports: [
     BrowserModule,
