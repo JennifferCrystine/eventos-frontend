@@ -1,6 +1,7 @@
 <div class="form-wrapper">
-  <h1>Adicionar novo volume</h1>
+  <h1>Editar volume</h1>
   <form class="adicionar-volume" onsubmit="reset()">
+    <input type="hidden" id="volumeSigla" [(ngModel)]="volumeUpdate.idVolume" name="siglaEvento" placeholder="Sigla do volume" value={{volumeUpdate.idVolume}} class="input-padrao" required />
 
     <label for="volumeSigla">Sigla</label>
     <input type="text" id="volumeSigla" [(ngModel)]="volumeUpdate.siglaEvento" name="siglaEvento" placeholder="Sigla do volume" class="input-padrao" required />
@@ -20,7 +21,6 @@
     <label for="cidade">Cidade:</label>
     <input type="text" id="cidade" [(ngModel)]="volumeUpdate.cidade" placeholder="Cidade onde ocorrerá essa edição do evento"
       name="cidade" class="input-padrao" required />
-
   </form>
-  <button type="submit" mat-flat-button color="primary" class="enviar" (click)="svc.criarVolume(volumeUpdate)" [routerLink]="['']">Adicionar Evento</button>
+  <button type="submit" mat-flat-button color="primary" class="enviar" (click)="svc.criarVolume(volumeUpdate)" [routerLink]="['']">Editar</button>
 </div>
