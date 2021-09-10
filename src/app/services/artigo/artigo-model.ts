@@ -19,6 +19,10 @@ export class ArtigoModel {
 
   public idArtigo: number;
 
+  public titulo: string;
+
+  public tituloEn: string;
+
   public idVolume: number;
 
   public autores: {};
@@ -26,10 +30,6 @@ export class ArtigoModel {
   public ordemArtigo: number;
 
   public idioma: string;
-
-  public titulo: string;
-
-  public tituloEn: string;
 
   public resumo: string;
 
@@ -40,4 +40,19 @@ export class ArtigoModel {
   public palavrasChavesEn: string;
 
   public numeroPaginas: number;
+
+  public convertApiToModel(artigoApi: ArtigoApiModel) : void {
+    this.idArtigo = artigoApi.idArtigo;
+    this.idVolume = artigoApi.idVolume;
+    this.autores = artigoApi.autores;
+    this.idioma = artigoApi.idioma;
+    this.ordemArtigo = artigoApi.ordemArtigo;
+    this.titulo = artigoApi.titulo;
+    this.tituloEn = artigoApi.tituloEn;
+    this.resumo = artigoApi.resumo;
+    this.resumoEn = artigoApi.resumoEn;
+    this.palavrasChaves = artigoApi.palavrasChaves;
+    this.palavrasChavesEn = artigoApi.palavrasChavesEn;
+    this.numeroPaginas = artigoApi.numeroPaginas;
+  }
 }

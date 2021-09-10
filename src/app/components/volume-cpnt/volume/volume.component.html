@@ -8,7 +8,7 @@
       [routerLink]="['/volumes', volume.idVolume]" >
         Ver detalhes
       </button>
-      <button mat-mini-fab color="warn" aria-label="Excluir volume"
+      <button mat-mini-fab color="warn" aria-label="Excluir volume" [routerLink]="['']"
       (click)="excluirVolume(volume.idVolume)">
         <mat-icon>delete</mat-icon>
       </button>

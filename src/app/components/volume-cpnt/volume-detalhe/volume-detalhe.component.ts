@@ -11,8 +11,6 @@ import { VolumeService } from 'src/app/services/volume/volume.service';
 export class VolumeDetalheComponent implements OnInit {
 
   volume: VolumeApiModel | undefined;
-  tempId: any;
-  id: number = 0;
 
   constructor(
     private _activatedRoute:ActivatedRoute,
@@ -24,11 +22,12 @@ export class VolumeDetalheComponent implements OnInit {
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe(params => {
       if (params != null) {
-        this.tempId = params.get('id');
-        this.id = Number.parseInt(this.tempId);
-        this.svc.artigosVolume(this.id);
-        
-        this.svc.svc.getById(this.id).subscribe({
+        var tempId: any;
+        tempId = params.get('id');
+        var id = Number.parseInt(tempId);
+        this.svc.artigosVolume(id);
+
+        this.svc.svc.getById(id).subscribe({
           next: (volumeApi) => {
             this.volume = volumeApi;
           }

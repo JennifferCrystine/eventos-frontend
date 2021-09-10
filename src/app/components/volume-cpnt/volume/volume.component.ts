@@ -14,7 +14,7 @@ export class VolumeComponent implements OnInit {
 
   public excluirVolume(id: number): void{
     this.svc.excluirVolume(id);
-
+    this.svc.atualizarVolumes();
   }
 
   ngOnInit(): void {

@@ -9,10 +9,14 @@
       <h3>{{artigo?.resumoEn}}</h3>
       <h3>{{artigo?.palavrasChaves}}</h3>
       <h3>{{artigo?.palavrasChavesEn}}</h3>
+      <!-- <h3 *ngFor="let item of svc.svc.">{{}}</h3> -->
       <h3>nº páginas: {{artigo?.numeroPaginas}}</h3>
     </mat-card>
     <button class="voltar" mat-mini-fab color="primary" aria-label="Voltar para a página do volume" [routerLink]="['/volumes', artigo?.idVolume]">
       <mat-icon>arrow_back_ios_new</mat-icon>
+    </button>
+    <button class="editar" mat-mini-fab color="primary" aria-label="Editar artigo" [routerLink]="['editar']">
+      <mat-icon>mode_edit</mat-icon>
     </button>
   </div>
 </div>

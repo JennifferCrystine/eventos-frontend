@@ -2,5 +2,8 @@
   <mat-card class="artigo">
     <h2 class="artigo-titulo"><a [routerLink]="['artigos/', artigo?.idArtigo]">{{artigo?.titulo}}</a></h2>
     <p *ngIf="artigo?.titulo != null">Ordem artigo: {{artigo?.ordemArtigo}}</p>
+    <button mat-mini-fab color="warn" aria-label="Excluir artigo" [routerLink]="['']">
+      <mat-icon>delete</mat-icon>
+    </button>
   </mat-card>
 </div>

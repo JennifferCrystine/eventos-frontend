@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { VolumePostModel } from './volume-post-model';
 import { VolumeModel } from './volume-model';
 import { ArtigoApiModel } from '../artigo/artigo-api-model';
+import { VolumeUpdateModel } from './volume-update-model';
 
 @Injectable({
   providedIn: 'root'
@@ -39,8 +40,9 @@ export class VolumeApiService {
   }
 
 
-  public excluirVolume(idVolume : number): void {
-    this.http.delete('http://localhost:8080/volumes/' + idVolume);
+  public excluirVolume(idVolume : number): Observable<object> {
+    console.log("entrouuu no api svc");
+    return this.http.delete('http://localhost:8080/volumes/' + idVolume);
   }
 
   public artigosDeUmVolume(idVolume : number): Observable<ArtigoApiModel[]> {

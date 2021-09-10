@@ -20,9 +20,10 @@ export class VolumeService {
   constructor(public svc : VolumeApiService) { }
 
   public listarVolumes(): void {
+    this.volumes = [];
     this.svc.listarVolumes().subscribe({
-      next: (volumes) => {
-        volumes.forEach(v => this.volumes.push(new VolumeModel(v)));
+      next: (volumesApi) => {
+        volumesApi.forEach(v => this.volumes.push(new VolumeModel(v)));
       }
     })
   }
@@ -35,9 +36,8 @@ export class VolumeService {
     });
   }
 
- 
-  public criarVolume(volume: VolumePostModel): void {
 
+  public criarVolume(volume: VolumePostModel): void {
     this.svc.criarVolume(volume).subscribe({
       next: () => {
         this.atualizarVolumes();
@@ -45,19 +45,26 @@ export class VolumeService {
     });
   }
 
+
   public atualizarVolumes(): void {
     this.listarVolumes();
   }
 
   public excluirVolume(id: number): void{
-    this.svc.excluirVolume(id);
-    this.atualizarVolumes();
+    this.svc.excluirVolume(id).subscribe({
+      next: () => {
+        console.log("deletou");
+        this.atualizarVolumes();
+      }
+    })
   }
 
   public artigosVolume(idVolume: number): void {
     this.svc.artigosDeUmVolume(idVolume).subscribe({
       next: (artigosApi) => {
-        artigosApi.forEach(a => this.artigos.push(new ArtigoModel(a)));
+        if (artigosApi != null) {
+          artigosApi.forEach(a => this.artigos.push(new ArtigoModel(a)));
+        }
       }
     })
   }

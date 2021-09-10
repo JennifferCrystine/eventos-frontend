@@ -1,0 +1,37 @@
+<div class="form-wrapper">
+  <h1>Editar artigo</h1>
+  <form class="editar-artigo" onsubmit="reset()" *ngIf="artigo!= null">
+    <input type="hidden" id="idArtigo" [(ngModel)]="artigo.idArtigo" name="idArtigo" value={{artigo.idArtigo}} required />
+
+    <input type="hidden" id="idVolume" [(ngModel)]="artigo.idVolume" name="idVolume" value={{artigo.idVolume}} required />
+
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo" [(ngModel)]="artigo.titulo" name="titulo" placeholder="Título do artigo" class="input-padrao" value={{artigo.titulo}} required />
+
+    <label for="tituloEn">Title</label>
+    <input type="text" id="tituloEn" [(ngModel)]="artigo.tituloEn" name="tituloEn" placeholder="Article's title" class="input-padrao" value={{artigo.tituloEn}} required />
+
+    <label for="idioma">Idioma</label>
+    <input type="text" id="idioma" [(ngModel)]="artigo.idioma" name="idioma" placeholder="Idioma" class="input-padrao" value={{artigo.idioma}} required />
+
+    <label for="resumo">Resumo</label>
+    <input type="text" id="resumo" [(ngModel)]="artigo.resumo" name="resumo" placeholder="Resumo do artigo" class="input-padrao" value={{artigo.resumo}} required />
+
+    <label for="abstract">Abstract</label>
+    <input type="text" id="abstract" [(ngModel)]="artigo.resumoEn" name="abstract" placeholder="Article's abstract" class="input-padrao" value={{artigo.resumoEn}} required />
+
+    <label for="palavrasChaves">Palavras chaves</label>
+    <input type="text" id="palavrasChaves" [(ngModel)]="artigo.palavrasChaves" name="palavrasChaves" placeholder="palavrasChaves do artigo" class="input-padrao" value={{artigo.palavrasChaves}} required />
+
+    <label for="keywords">Keywords</label>
+    <input type="text" id="keywords" [(ngModel)]="artigo.palavrasChavesEn" name="keywords" placeholder="Article's keywords do artigo" class="input-padrao" value={{artigo.palavrasChavesEn}} required />
+
+    <label for="numeroPaginas">Número de páginas</label>
+    <input type="text" id="numeroPaginas" [(ngModel)]="artigo.numeroPaginas" name="numeroPaginas" placeholder="Quantidade de páginas" class="input-padrao" value={{artigo.numeroPaginas}} required />
+
+    <label for="ordemArtigo">Ordem artigo</label>
+    <input type="text" id="ordemArtigo" [(ngModel)]="artigo.ordemArtigo" name="ordemArtigo" placeholder="Quantidade de páginas" class="input-padrao" value={{artigo.ordemArtigo}} required />
+
+  </form>
+  <button type="submit" *ngIf="artigo != null" mat-flat-button color="primary" class="enviar" (click)="atualizarArtigo(artigo)" [routerLink]="['..']">Editar</button>
+</div>

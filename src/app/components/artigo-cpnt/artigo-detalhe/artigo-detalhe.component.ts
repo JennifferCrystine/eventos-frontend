@@ -22,6 +22,11 @@ export class ArtigoDetalheComponent implements OnInit {
         this.svc.svc.getById(id).subscribe({
           next: (artigoApi) => {
             this.artigo = artigoApi;
+            this.svc.svc.autoresDeUmArtigo(id).subscribe({
+              next: (a) => {
+                  console.log(a);
+              }
+            })
           }
         });
       }

@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ArtigoComponent } from './components/artigo-cpnt/artigo/artigo.component';
 import { ArtigoDetalheComponent } from './components/artigo-cpnt/artigo-detalhe/artigo-detalhe.component';
 import { EditarVolumeComponent } from './components/volume-cpnt/editar-volume/editar-volume.component';
+import { EditarArtigoComponent } from './components/artigo-cpnt/editar-artigo/editar-artigo.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditarVolumeComponent } from './components/volume-cpnt/editar-volume/ed
     CriarVolumeComponent,
     ArtigoComponent,
     ArtigoDetalheComponent,
-    EditarVolumeComponent
+    EditarVolumeComponent,
+    EditarArtigoComponent
   ],
   imports: [
     BrowserModule,
