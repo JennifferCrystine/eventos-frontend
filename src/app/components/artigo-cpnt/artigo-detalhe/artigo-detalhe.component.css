@@ -11,6 +11,24 @@
   margin-top: 10px;
 }
 
+.detalhes-artigo .artigo .autores {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.detalhes-artigo .artigo .autores .autor{
+  margin-right: 2.5px;
+  margin-left: 2.5px;
+  text-decoration: none;
+  color: black;
+}
+
+.detalhes-artigo .artigo .autores .autor a{
+  text-decoration: none;
+  color: black;
+}
+
 .detalhes-artigo .voltar {
   margin: 5px;
   align-self: flex-start;

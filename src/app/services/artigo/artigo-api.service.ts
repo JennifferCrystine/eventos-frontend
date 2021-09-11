@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AutorApiModel } from '../autor/autor-api-model';
 import { ArtigoApiModel } from './artigo-api-model';
 import { ArtigoModel } from './artigo-model';
 import { ArtigoPostModel } from './artigo-post-model';
@@ -44,8 +45,8 @@ export class ArtigoApiService {
     );
   }
 
-  public autoresDeUmArtigo(idArtigo : number): Observable<ArtigoApiModel[]> {
-    return this.http.get<ArtigoApiModel[]>(
+  public autoresDeUmArtigo(idArtigo : number): Observable<AutorApiModel[]> {
+    return this.http.get<AutorApiModel[]>(
       'http://localhost:8080/artigos/'+ idArtigo +'/autores'
     );
   }

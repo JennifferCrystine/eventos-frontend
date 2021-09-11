@@ -1,0 +1,17 @@
+<div class="detalhes-autor">
+  <div class="autor">
+    <mat-card  *ngIf="autor != null">
+      <h3>{{autor.primeiroNome + " " + autor.nomeMeio + " " + autor.sobrenome}}</h3>
+      <h3>{{autor.email}}</h3>
+      <h3>{{autor.afiliacao}}</h3>
+      <h3>{{autor.afiliacaoEn}}</h3>
+      <h3>{{autor.pais}}</h3>
+      <h3>{{autor.ordemAutor}}</h3>
+      <h3>{{autor.orcId}}</h3>
+    </mat-card>
+    <button class="voltar" mat-mini-fab color="primary" aria-label="Voltar para a página do artigo" [routerLink]="['../..']">
+      <mat-icon>arrow_back_ios_new</mat-icon>
+    </button>
+  </div>
+
+</div>

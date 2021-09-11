@@ -7,6 +7,7 @@ import { VolumeDetalheComponent } from './components/volume-cpnt/volume-detalhe/
 import { ArtigoDetalheComponent } from './components/artigo-cpnt/artigo-detalhe/artigo-detalhe.component';
 import { EditarVolumeComponent } from './components/volume-cpnt/editar-volume/editar-volume.component';
 import { EditarArtigoComponent } from './components/artigo-cpnt/editar-artigo/editar-artigo.component';
+import { AutorComponent } from './components/autor-cpnt/autor/autor.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,9 @@ export const routes: Routes = [
   },
   {
     path: 'volumes/:id/artigos/:id/editar', component: EditarArtigoComponent,
+  },
+  {
+    path: 'volumes/:id/artigos/:id/autor/:id', component: AutorComponent,
   }
 ];
 

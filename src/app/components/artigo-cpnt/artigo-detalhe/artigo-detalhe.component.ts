@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArtigoApiModel } from 'src/app/services/artigo/artigo-api-model';
 import { ArtigoService } from 'src/app/services/artigo/artigo.service';
+import { AutorApiModel } from 'src/app/services/autor/autor-api-model';
+import { AutorModel } from 'src/app/services/autor/autor-model';
 
 @Component({
   selector: 'app-artigo-detalhe',
@@ -10,6 +12,7 @@ import { ArtigoService } from 'src/app/services/artigo/artigo.service';
 })
 export class ArtigoDetalheComponent implements OnInit {
   public artigo: ArtigoApiModel | undefined;
+  public autores: AutorModel[] = [];
 
   constructor(private _activatedRoute: ActivatedRoute, public svc: ArtigoService) { }
 
@@ -23,8 +26,14 @@ export class ArtigoDetalheComponent implements OnInit {
           next: (artigoApi) => {
             this.artigo = artigoApi;
             this.svc.svc.autoresDeUmArtigo(id).subscribe({
-              next: (a) => {
-                  console.log(a);
+              next: () => {
+                if (this.artigo != null) {
+                  this.svc.svc.autoresDeUmArtigo(this.artigo.idArtigo).subscribe({
+                    next: (autoresApi) => {
+                      autoresApi.forEach(v => this.autores.push(new AutorModel(v)));
+                    }
+                  });
+                }
               }
             })
           }
@@ -32,5 +41,4 @@ export class ArtigoDetalheComponent implements OnInit {
       }
     });
   }
-
 }

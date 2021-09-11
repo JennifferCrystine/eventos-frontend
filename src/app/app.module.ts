@@ -17,6 +17,7 @@ import { ArtigoComponent } from './components/artigo-cpnt/artigo/artigo.componen
 import { ArtigoDetalheComponent } from './components/artigo-cpnt/artigo-detalhe/artigo-detalhe.component';
 import { EditarVolumeComponent } from './components/volume-cpnt/editar-volume/editar-volume.component';
 import { EditarArtigoComponent } from './components/artigo-cpnt/editar-artigo/editar-artigo.component';
+import { AutorComponent } from './components/autor-cpnt/autor/autor.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EditarArtigoComponent } from './components/artigo-cpnt/editar-artigo/ed
     ArtigoComponent,
     ArtigoDetalheComponent,
     EditarVolumeComponent,
-    EditarArtigoComponent
+    EditarArtigoComponent,
+    AutorComponent
   ],
   imports: [
     BrowserModule,
