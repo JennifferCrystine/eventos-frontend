@@ -14,11 +14,12 @@ export class ArtigoService {
   constructor(public svc: ArtigoApiService) { }
 
   public listarArtigos(): void {
+    this.artigos = [];
     this.svc.listarArtigos().subscribe({
       next: (artigosApi) => {
         artigosApi.forEach(v => this.artigos.push(new ArtigoModel(v)));
       }
-    })
+    });
   }
 
   public obterArtigo(id : number): void {
@@ -29,20 +30,25 @@ export class ArtigoService {
     });
   }
 
-  public criarArtigo(artigo: ArtigoPostModel): void {
-
+  public criarArtigo(idVolume: number, artigo: ArtigoPostModel): void {
+    console.log(artigo);
+    artigo.idVolume = idVolume;
     this.svc.criarArtigo(artigo).subscribe({
       next: () => {
-        this.atualizarArtigosApi();
+        this.atualizarArtigos();
       },
     });
   }
 
-  public atualizarArtigosApi(): void {
+  public atualizarArtigos(): void {
     this.listarArtigos();
   }
 
   public excluirArtigo(id: number): void{
-    this.svc.excluirArtigo(id);
+    this.svc.excluirArtigo(id).subscribe({
+      next: () => {
+        this.atualizarArtigos();
+      }
+    });
   }
 }

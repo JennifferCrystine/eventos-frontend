@@ -1,0 +1,40 @@
+<div class="form-wrapper">
+  <h1>Adicionar novo artigo</h1>
+  <form class="adicionar-artigo" onsubmit="reset()">
+
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo" [(ngModel)]="artigoModel.titulo" name="titulo" placeholder="Título do artigo" class="input-padrao" required />
+
+    <label for="tituloEn">Title</label>
+    <input type="text" id="tituloEn" [(ngModel)]="artigoModel.tituloEn" name="tituloEn" placeholder="Article's title" class="input-padrao" required />
+
+    <label for="resumo">Resumo</label>
+    <input type="text" id="resumo" [(ngModel)]="artigoModel.resumo" name="resumo" placeholder="Resumo do artigo" class="input-padrao" required />
+
+    <label for="resumoEn">Abstract</label>
+    <input type="text" id="resumoEn" [(ngModel)]="artigoModel.resumoEn" name="resumoEn" placeholder="Article's abstract" class="input-padrao" required />
+
+    <label for="palavrasChaves">Palavras chaves</label>
+    <input type="text" id="palavrasChaves" [(ngModel)]="artigoModel.palavrasChaves" name="palavrasChaves" placeholder="Palavras chaves do artigo" class="input-padrao" required />
+
+    <label for="palavrasChavesEn">Keywords</label>
+    <input type="text" id="palavrasChavesEn" [(ngModel)]="artigoModel.palavrasChavesEn" name="palavrasChavesEn" placeholder="Article's keywords" class="input-padrao" required />
+
+    <label for="ordemArtigo">Ordem do artigo</label>
+    <input type="number" id="ordemArtigo" [(ngModel)]="artigoModel.ordemArtigo" name="ordemArtigo" placeholder="Article's keywords" class="input-padrao" required />
+
+
+    <label for="idioma">Idioma</label>
+    <select [(ngModel)]="artigoModel.idioma" name="idioma" class="input-padrao" required>
+      <option value="PT">PT</option>
+      <option value="EN">EN</option>
+      <option value="ES">ES</option>
+    </select>
+
+    <label for="numeroPaginas">Nº de páginas</label>
+    <input type="text" id="numeroPaginas" [(ngModel)]="artigoModel.numeroPaginas" name="numeroPaginas" placeholder="Article's keywords" class="input-padrao" required />
+
+  </form>
+  <button *ngIf="idVolume != null" type="submit" mat-flat-button color="primary" class="enviar" (click)="svc.criarArtigo(idVolume, artigoModel)"  [routerLink]="['..']">Adicionar artigo</button>
+</div>
+

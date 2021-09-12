@@ -8,6 +8,7 @@ import { ArtigoDetalheComponent } from './components/artigo-cpnt/artigo-detalhe/
 import { EditarVolumeComponent } from './components/volume-cpnt/editar-volume/editar-volume.component';
 import { EditarArtigoComponent } from './components/artigo-cpnt/editar-artigo/editar-artigo.component';
 import { AutorComponent } from './components/autor-cpnt/autor/autor.component';
+import { CriarArtigoComponent } from './components/artigo-cpnt/criar-artigo/criar-artigo.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,9 @@ export const routes: Routes = [
   },
   {
     path: 'volumes/:id/artigos/:id/autor/:id', component: AutorComponent,
+  },
+  {
+    path: 'volumes/:id/artigo', component: CriarArtigoComponent,
   }
 ];
 

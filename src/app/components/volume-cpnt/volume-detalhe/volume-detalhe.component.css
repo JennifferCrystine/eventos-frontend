@@ -19,19 +19,21 @@
 .detalhes-volume .artigos-wrap {
   margin-top: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-width: 80vw;
   max-width: 100vw;
+  flex-wrap: wrap;
 
 }
 
-.detalhes-volume .artigos-wrap .artigos {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.detalhes-volume .artigos-wrap .artigo {
   align-items: flex-start;
   margin: 5px;
 }
 
+
+.detalhes-volume .adicionar-artigo {
+  margin: 5px;
+}
 
 

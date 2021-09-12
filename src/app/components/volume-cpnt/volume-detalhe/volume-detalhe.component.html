@@ -17,9 +17,12 @@
   </div>
   <h1 *ngIf="svc.artigos != null">Artigos</h1>
   <div *ngIf="svc.artigos != null" class="artigos-wrap">
-    <div class="artigos" *ngFor="let item of svc.artigos">
+    <div class="artigo" *ngFor="let item of svc.artigos">
       <app-artigo [artigo]="item"></app-artigo>
     </div>
   </div>
   <p *ngIf="svc.artigos == null">Ainda não há artigos registrados nesse volume!</p>
+  <button class="adicionar-artigo" mat-button color="primary" aria-label="Adicionar artigo" [routerLink]="['artigo']">
+    Adicionar artigo
+  </button>
 </div>

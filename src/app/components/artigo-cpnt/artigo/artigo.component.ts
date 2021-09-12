@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ArtigoModel } from 'src/app/services/artigo/artigo-model';
+import { ArtigoService } from 'src/app/services/artigo/artigo.service';
 
 @Component({
   selector: 'app-artigo',
@@ -9,10 +10,13 @@ import { ArtigoModel } from 'src/app/services/artigo/artigo-model';
 export class ArtigoComponent implements OnInit {
   @Input() artigo: ArtigoModel | undefined;
 
-  constructor() { }
+  constructor(public svc: ArtigoService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
+  public excluirArtigo(id: number): void{
+    this.svc.excluirArtigo(id);
+    this.svc.atualizarArtigos();
   }
 
 }

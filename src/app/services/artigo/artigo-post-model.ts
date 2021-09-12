@@ -1,5 +1,5 @@
 export class ArtigoPostModel {
-  idVolume: number = 1;
+  idVolume: number = 2;
 
   ordemArtigo: number = 1;
 

@@ -53,13 +53,13 @@ export class VolumeService {
   public excluirVolume(id: number): void{
     this.svc.excluirVolume(id).subscribe({
       next: () => {
-        console.log("deletou");
         this.atualizarVolumes();
       }
     })
   }
 
   public artigosVolume(idVolume: number): void {
+    this.artigos = [];
     this.svc.artigosDeUmVolume(idVolume).subscribe({
       next: (artigosApi) => {
         if (artigosApi != null) {
