@@ -34,7 +34,11 @@ export class EditarArtigoComponent implements OnInit {
       next: (artigoApi) => {
         if (this.artigo != null) {
           this.artigo.convertApiToModel(artigoApi);
-          this.svc.atualizarArtigos();
+          this.svc.svc.getById(this.artigo.idArtigo).subscribe({
+            next : (artigoApi) => {
+              this.artigo?.convertApiToModel(artigoApi);
+            }
+          });
         }
       }
     });

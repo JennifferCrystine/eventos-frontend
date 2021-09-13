@@ -30,9 +30,9 @@ export class AutorService {
     });
   }
 
-  public criarAutor(Autor: AutorPostModel): void {
-
-    this.svc.criarAutor(Autor).subscribe({
+  public criarAutor(idArtigo: number, autor: AutorPostModel): void {
+    autor.idArtigo = idArtigo;
+    this.svc.criarAutor(autor).subscribe({
       next: () => {
         this.atualizarAutores();
       },
@@ -44,6 +44,10 @@ export class AutorService {
   }
 
   public excluirAutor(id: number): void{
-    this.svc.excluirAutor(id);
+    this.svc.excluirAutor(id).subscribe({
+      next: () => {
+        this.atualizarAutores();
+      }
+    })
   }
 }

@@ -14,11 +14,11 @@ export class AutorModel {
     this.pais = autorApi.pais;
     this.orcId = autorApi.orcId;
   }
-  idAutor: Number;
+  idAutor: number;
 
-  idArtigo: Number;
+  idArtigo: number;
 
-  ordemAutor: Number;
+  ordemAutor: number;
 
   email: string;
 

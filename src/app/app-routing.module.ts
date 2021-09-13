@@ -9,6 +9,8 @@ import { EditarVolumeComponent } from './components/volume-cpnt/editar-volume/ed
 import { EditarArtigoComponent } from './components/artigo-cpnt/editar-artigo/editar-artigo.component';
 import { AutorComponent } from './components/autor-cpnt/autor/autor.component';
 import { CriarArtigoComponent } from './components/artigo-cpnt/criar-artigo/criar-artigo.component';
+import { EditarAutorComponent } from './components/autor-cpnt/editar-autor/editar-autor.component';
+import { CriarAutorComponent } from './components/autor-cpnt/criar-autor/criar-autor.component';
 
 export const routes: Routes = [
   {
@@ -34,6 +36,12 @@ export const routes: Routes = [
   },
   {
     path: 'volumes/:id/artigo', component: CriarArtigoComponent,
+  },
+  {
+    path: 'volumes/:id/artigos/:id/autor/:id/editar', component: EditarAutorComponent,
+  },
+  {
+    path: 'volumes/:id/artigos/:id/autor', component: CriarAutorComponent,
   }
 ];
 

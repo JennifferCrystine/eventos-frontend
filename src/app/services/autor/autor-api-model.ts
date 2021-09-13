@@ -1,9 +1,9 @@
 export interface AutorApiModel {
-  idAutor: Number;
+  idAutor: number;
 
-  idArtigo: Number;
+  idArtigo: number;
 
-  ordemAutor: Number;
+  ordemAutor: number;
 
   email: string;
 

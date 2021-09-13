@@ -28,4 +28,10 @@ export class AutorComponent implements OnInit {
       }
     });
   }
+
+
+  public excluirAutor(id: number): void{
+    this.svc.excluirAutor(id);
+    this.svc.atualizarAutores();
+  }
 }

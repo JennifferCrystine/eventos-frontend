@@ -11,9 +11,19 @@
   margin-top: 10px;
 }
 
-.detalhes-autor .voltar {
+.detalhes-autor .autor .voltar {
   margin: 5px;
   align-self: flex-start;
+}
+
+
+.detalhes-artigo .autor .editar {
+  margin: 5px;
+}
+
+
+.detalhes-artigo .autor .editar {
+  margin: 50px;
 }
 
 

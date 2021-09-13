@@ -1,0 +1,23 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-wrapper h1 {
+  margin-top: 10px;
+}
+
+.form-wrapper .adicionar-autor {
+  display: flex;
+  flex-direction: column;
+  max-width: 50vw;
+  min-width: 50vw;
+  margin-top: 10px;
+}
+
+.form-wrapper .enviar {
+  margin-top: 10px;
+}
+
+

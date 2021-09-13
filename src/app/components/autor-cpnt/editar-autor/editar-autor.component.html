@@ -1,0 +1,36 @@
+<div class="form-wrapper">
+  <h1>Editar autor</h1>
+  <form class="editar-autor" onsubmit="reset()" *ngIf="autor!= null">
+    <input type="hidden" id="idAutor" [(ngModel)]="autor.idAutor" name="idAutor" value={{autor.idAutor}} required />
+
+    <input type="hidden" id="idArtigo" [(ngModel)]="autor.idArtigo" name="idArtigo" value={{autor.idArtigo}} required />
+
+    <label for="ordemAutor">Ordem autor</label>
+    <input type="text" id="ordemAutor" [(ngModel)]="autor.ordemAutor" name="ordemAutor" placeholder="Ordem do autor no artigo" class="input-padrao" value={{autor.ordemAutor}} required />
+
+    <label for="email">Email</label>
+    <input type="text" id="email" [(ngModel)]="autor.email" name="email" placeholder="Email" class="input-padrao" value={{autor.email}} required />
+
+    <label for="primeiroNome">Primeiro nome</label>
+    <input type="text" id="primeiroNome" [(ngModel)]="autor.primeiroNome" name="primeiroNome" placeholder="Primeiro nome" class="input-padrao" value={{autor.primeiroNome}} required />
+
+    <label for="nomeMeio">Nome do meio</label>
+    <input type="text" id="nomeMeio" [(ngModel)]="autor.nomeMeio" name="nomeMeio" placeholder="Nome meio" class="input-padrao" value={{autor.nomeMeio}} required />
+
+    <label for="sobrenome">Sobrenome</label>
+    <input type="text" id="sobrenome" [(ngModel)]="autor.sobrenome" name="sobrenome" placeholder="Sobrenome" class="input-padrao" value={{autor.sobrenome}} required />
+
+    <label for="afiliacao">Afiliação</label>
+    <input type="text" id="afiliacao" [(ngModel)]="autor.afiliacao" name="afiliacao" placeholder="afiliacao" class="input-padrao" value={{autor.afiliacao}} required />
+
+    <label for="afiliacaoEn">Afiliação Inglês</label>
+    <input type="text" id="afiliacaoEn" [(ngModel)]="autor.afiliacaoEn" name="afiliacaoEn" placeholder="afiliacaoEn" class="input-padrao" value={{autor.afiliacaoEn}} required />
+
+    <label for="pais">País</label>
+    <input type="text" id="pais" [(ngModel)]="autor.pais" name="pais" placeholder="pais" class="input-padrao" value={{autor.pais}} required />
+
+    <label for="orcId">ORC ID</label>
+    <input type="text" id="orcId" [(ngModel)]="autor.orcId" name="orcId" placeholder="orcId" class="input-padrao" value={{autor.orcId}} required />
+  </form>
+  <button type="submit" *ngIf="autor != null" mat-flat-button color="primary" class="enviar" (click)="atualizarAutor(autor)" [routerLink]="['..']">Editar</button>
+</div>

@@ -12,6 +12,12 @@
     <button class="voltar" mat-mini-fab color="primary" aria-label="Voltar para a página do artigo" [routerLink]="['../..']">
       <mat-icon>arrow_back_ios_new</mat-icon>
     </button>
+    <button class="editar" mat-mini-fab color="primary" aria-label="Editar autor" [routerLink]="['editar']">
+      <mat-icon>mode_edit</mat-icon>
+    </button>
+    <button class="deletar" *ngIf="autor != null" mat-mini-fab color="warn" aria-label="Excluir autor" (click)="excluirAutor(autor.idAutor)" [routerLink]="['.']">
+      <mat-icon>delete</mat-icon>
+    </button>
   </div>
 
 </div>

@@ -34,7 +34,9 @@
   align-self: flex-start;
 }
 
-
+.detalhes-artigo .editar {
+  margin-right: 5px;
+}
 
 .detalhes-artigo .artigo .artigo-titulo {
   text-align: center;
