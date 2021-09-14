@@ -28,8 +28,11 @@ export class ArtigoDetalheComponent implements OnInit {
             this.svc.svc.autoresDeUmArtigo(id).subscribe({
               next: () => {
                 if (this.artigo != null) {
+                  console.log(this.artigo.idArtigo);
                   this.svc.svc.autoresDeUmArtigo(this.artigo.idArtigo).subscribe({
                     next: (autoresApi) => {
+                      this.autores = [];
+                      console.log(this.autores);
                       autoresApi.forEach(v => this.autores.push(new AutorModel(v)));
                     }
                   });

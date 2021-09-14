@@ -36,6 +36,7 @@ export class EditarVolumeComponent implements OnInit {
       next: (volumeApi) => {
         if (this.volume != null) {
           this.volume.convertApiToModel(volumeApi);
+          console.log(volume);
           this.svc.atualizarVolumes();
         }
       }

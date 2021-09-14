@@ -1,8 +1,8 @@
 <div class="volume">
   <mat-card>
-    <p *ngIf="volume?.siglaEvento != null">Sigla: {{volume?.siglaEvento}}</p>
-    <p *ngIf="volume?.numeroEdicao != null">Edição: {{volume?.numeroEdicao}}</p>
-    <p *ngIf="volume?.dataInicio != null">Data: {{volume?.dataInicio | date }}</p>
+    <p *ngIf="volume?.siglaEvento != null">Sigla do evento: {{volume?.siglaEvento}}</p>
+    <p *ngIf="volume?.numeroEdicao != null">Edição do evento: {{volume?.numeroEdicao}}</p>
+    <p *ngIf="volume?.dataInicio != null">Data do evento: {{volume?.dataInicio | date }}</p>
     <div class="botoes" *ngIf="volume != null">
       <button mat-button color="primary" aria-label="Ver detalhes do volume"
       [routerLink]="['/volumes', volume.idVolume]" >

@@ -3,11 +3,14 @@
   <form class="editar-volume" onsubmit="reset()" *ngIf="volume!= null">
     <input type="hidden" id="idVolume" [(ngModel)]="volume.idVolume" name="idVolume" value={{volume.idVolume}} required />
 
-    <label for="volumeSigla">Sigla</label>
-    <input type="text" id="volumeSigla" [(ngModel)]="volume.siglaEvento" name="siglaEvento" placeholder="Sigla do volume" class="input-padrao" value={{volume.siglaEvento}} required />
+    <label for="volumeSigla">Sigla do evento:</label>
+    <input type="text" id="volumeSigla" [(ngModel)]="volume.siglaEvento" name="siglaEvento" placeholder="Sigla do evento" class="input-padrao" value={{volume.siglaEvento}} required />
 
-    <label for=" dataInicio">Data de Fim:</label>
+    <label for=" dataInicio">Data de início:</label>
     <input type="date" id="dataInicio" [(ngModel)]="volume.dataInicio" name="dataInicio" class="input-padrao" value={{volume.dataInicio}} required />
+
+    <label for="numeroEdicao">Edição do evento</label>
+    <input type="number" id="numeroEdicao" [(ngModel)]="volume.numeroEdicao" name="numeroEdicao" class="input-padrao" value={{volume.numeroEdicao}} required />
 
     <label for="descricaoPt">Descrição</label>
     <input type="text" id="descricaoPt"
